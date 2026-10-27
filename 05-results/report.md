@@ -1,18 +1,22 @@
-# Reporte de Resultados
+# Reporte de resultados
 
-## Resumen ejecutivo
-- Casos ejecutados: 15
-- Pass: 
-- Fail: 
-- Blocked: 
+## Estado de ejecución
+- Casos diseñados: 10
+- Casos ejecutados: 0
+- Pass: N/A
+- Fail: N/A
+- Blocked: N/A
+- Estado global: **No evaluado**
 
-## Hallazgos clave
-- BR-001 (Alta/P0) impacta conversión.
-- BR-002 (Media/P1) afecta experiencia y confianza.
+El plan y la matriz están preparados; no se han ejecutado contra el sitio de demostración. No se atribuyen defectos confirmados al sitio sin reproducción y evidencia.
+
+## Hallazgos de ejemplo
+Los bug reports existentes se consideran hipótesis pendientes de verificación. No forman parte de los resultados observados.
 
 ## Recomendación Go/No-Go
-- **No-Go** si BR-001 está presente.
+**No evaluado.** Ejecutar primero los casos P1 y registrar resultados reales antes de emitir una recomendación.
 
-## Riesgos / Mitigaciones
-- Validaciones en checkout: agregar reglas y mensajes.
-- Persistencia de carrito: revisar storage/session.
+## Riesgos y mitigaciones
+- Compra incorrecta: validar campos requeridos y confirmación.
+- Total incorrecto: comparar los importes con el total del carrito.
+- Estado del carrito: repetir tras actualizar la página.
