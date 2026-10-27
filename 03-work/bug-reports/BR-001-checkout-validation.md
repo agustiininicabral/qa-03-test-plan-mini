@@ -2,11 +2,12 @@
 
 **Título:** Checkout permite enviar formulario con campos obligatorios vacíos  
 **ID:** BR-001-checkout-validation
+**Estado:** Hipótesis pendiente de reproducción; no confirmado.
 
 ## Ambiente
 - OS: Windows 11
 - Navegador/App: Chrome (última)
-- URL / Build / Versión: Sitio demo
+- URL / Build / Versión: https://www.demoblaze.com/ (versión no identificada)
 
 ## Precondiciones
 - Usuario con carrito con al menos 1 ítem (si aplica)
@@ -17,10 +18,10 @@
 3. Enviar formulario
 
 ## Resultado actual
-- El sistema permite continuar / no muestra validación consistente.
+- Hipótesis a verificar: el comportamiento descrito podría ocurrir; aún no fue reproducido.
 
 ## Resultado esperado
-- Bloquear envío y mostrar validaciones por campo con mensajes claros.
+- Verificar que el sitio rechace datos incompletos y explique qué debe corregirse.
 
 ## Severidad
 - Alta
@@ -32,7 +33,7 @@
 - Siempre
 
 ## Evidencia
-- Captura sugerida: `04-evidence/screenshots/BR-001-checkout-validation.png`
+- Captura pendiente (no adjunta; caso no ejecutado): `04-evidence/screenshots/BR-001-checkout-validation.png`
 
 ## Notas
 - Recomendar validaciones client-side + server-side.
