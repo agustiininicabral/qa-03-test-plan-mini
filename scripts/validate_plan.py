@@ -99,8 +99,21 @@ def validate_report(rows: list[dict[str, str]]) -> list[str]:
         errors.append("Results report case count does not match the CSV.")
     if f"- Casos ejecutados: {executed}" not in report:
         errors.append("Results report execution count does not match the CSV.")
-    if executed == 0 and "Estado global: **No evaluado**" not in report:
-        errors.append("Results report must remain No evaluado until cases are executed.")
+    if executed == 0:
+        if "Estado global: **No evaluado**" not in report:
+            errors.append("Results report must remain No evaluado until cases are executed.")
+        for label in ("Pass", "Fail", "Blocked"):
+            if f"- {label}: N/A" not in report:
+                errors.append(f"Results report must mark {label} as N/A before execution.")
+    else:
+        for label in ("Pass", "Fail", "Blocked"):
+            expected_count = sum(
+                (row.get("status") or "").strip() == label for row in rows
+            )
+            if f"- {label}: {expected_count}" not in report:
+                errors.append(
+                    f"Results report must state {expected_count} cases with status {label}."
+                )
     return errors
 
 
