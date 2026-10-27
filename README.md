@@ -1,47 +1,39 @@
 # Mini Test Plan
 
-## Objetivo
-Armar un plan de pruebas corto pero completo (scope, riesgos, estrategia, exit criteria).
-
-## Contexto
-Proyecto de portfolio QA: se trabaja con un sitio demo (p. ej. Demoblaze, SauceDemo o The Internet) para producir artefactos estándar y evidencia.
-
-## Alcance
-- Pruebas funcionales (UI/API según repo)
-- Documentación de evidencia
-- Reporte final con hallazgos y recomendación
-
-## Fuera de alcance
-- Performance testing profundo
-- Security pentesting
-- Automatización (fuera de este paquete)
-
-## Herramientas
-- Jira (conceptual)
-- Google Sheets/Excel (artefactos)
-- Postman (conceptual)
-- SQL (conceptual)
-- Navegador Chrome/Firefox
+Portfolio de QA Manual que demuestra cómo convertir requisitos y riesgos en una estrategia de prueba breve, priorizada y verificable.
 
 ## Entregables
-- Casos de prueba (CSV)
-- 3 a 8 Bug Reports (Markdown)
-- Evidencias (carpeta)
-- Reporte final (Markdown)
+- `01-requirements/scope.md`: alcance, riesgos y criterios de entrada/salida.
+- `01-requirements/user-stories.md`: historias con criterios de aceptación.
+- `02-plan/test-plan.md`: estrategia, datos, riesgos, criterios y entregables.
+- `03-work/test-cases.csv`: matriz de 10 casos priorizados.
+- `03-work/bug-reports/`: ejemplos pendientes de reproducción.
+- `05-results/report.md`: estado real de ejecución y recomendación.
 
-## Cómo reproducir
-1) Leer `01-requirements/scope.md`.
-2) Ejecutar los casos de prueba listados en `03-work/test-cases.csv`.
-3) Registrar fallos en `03-work/bug-reports/` usando la plantilla.
-4) Completar `05-results/report.md`.
+## Sistema bajo prueba propuesto
+https://www.demoblaze.com/
 
-## Evidencia
-- Ver carpeta `04-evidence/` (capturas, exports, logs).
+El sitio es externo y puede cambiar. Los resultados esperados son criterios por verificar, no afirmaciones de que el sitio tenga defectos. Los casos están en estado `Not executed` hasta que se ejecuten.
 
-## Resultados
-- Ver `05-results/report.md`.
+## Método
+1. Revisar el alcance y los riesgos.
+2. Ejecutar primero los casos P1 con datos ficticios.
+3. Registrar Pass, Fail o Blocked solo después de la ejecución.
+4. Adjuntar evidencia real y documentar únicamente defectos reproducibles.
+5. Emitir Go/No-Go cuando los resultados sean suficientes.
 
-## Próximos pasos
-- Extender cobertura por riesgos
-- Agregar automatización (Playwright/Cypress) en un repo dedicado
-- Integrar CI (GitHub Actions) para smoke básico
+## Validación de artefactos
+El repositorio incluye controles estáticos para confirmar que el plan contiene sus secciones esenciales, que los IDs de casos son únicos y que el reporte no afirma resultados antes de la ejecución.
+
+```powershell
+python scripts/validate_plan.py
+python -m unittest discover -s tests -v
+```
+
+Estos controles validan la documentación; no ejecutan el sitio ni reemplazan las pruebas manuales.
+
+## Estado actual
+El plan está preparado, pero la ejecución está pendiente. El reporte indica **No evaluado** hasta que existan resultados y evidencias.
+
+## Licencia
+MIT. Consultá [LICENSE](LICENSE).

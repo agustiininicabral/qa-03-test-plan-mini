@@ -1,46 +1,11 @@
 id,feature,title,priority,precondition,steps,expected,status
-TC-001,E2E Purchase Flow,Validar escenario 1,P1,Sitio disponible; usuario no logueado (si aplica).,"1) Abrir sitio
-2) Ejecutar acción
-3) Validar resultado",Comportamiento esperado según historia de usuario,
-TC-002,E2E Purchase Flow,Validar escenario 2,P1,Sitio disponible; usuario no logueado (si aplica).,"1) Abrir sitio
-2) Ejecutar acción
-3) Validar resultado",Comportamiento esperado según historia de usuario,
-TC-003,E2E Purchase Flow,Validar escenario 3,P1,Sitio disponible; usuario no logueado (si aplica).,"1) Abrir sitio
-2) Ejecutar acción
-3) Validar resultado",Comportamiento esperado según historia de usuario,
-TC-004,E2E Purchase Flow,Validar escenario 4,P1,Sitio disponible; usuario no logueado (si aplica).,"1) Abrir sitio
-2) Ejecutar acción
-3) Validar resultado",Comportamiento esperado según historia de usuario,
-TC-005,E2E Purchase Flow,Validar escenario 5,P1,Sitio disponible; usuario no logueado (si aplica).,"1) Abrir sitio
-2) Ejecutar acción
-3) Validar resultado",Comportamiento esperado según historia de usuario,
-TC-006,E2E Purchase Flow,Validar escenario 6,P1,Sitio disponible; usuario no logueado (si aplica).,"1) Abrir sitio
-2) Ejecutar acción
-3) Validar resultado",Comportamiento esperado según historia de usuario,
-TC-007,Cart,Validar escenario 7,P1,Sitio disponible; usuario no logueado (si aplica).,"1) Abrir sitio
-2) Ejecutar acción
-3) Validar resultado",Comportamiento esperado según historia de usuario,
-TC-008,Cart,Validar escenario 8,P1,Sitio disponible; usuario no logueado (si aplica).,"1) Abrir sitio
-2) Ejecutar acción
-3) Validar resultado",Comportamiento esperado según historia de usuario,
-TC-009,Cart,Validar escenario 9,P2,Sitio disponible; usuario no logueado (si aplica).,"1) Abrir sitio
-2) Ejecutar acción
-3) Validar resultado",Comportamiento esperado según historia de usuario,
-TC-010,Cart,Validar escenario 10,P2,Sitio disponible; usuario no logueado (si aplica).,"1) Abrir sitio
-2) Ejecutar acción
-3) Validar resultado",Comportamiento esperado según historia de usuario,
-TC-011,UI/Validation,Validar escenario 11,P2,Sitio disponible; usuario no logueado (si aplica).,"1) Abrir sitio
-2) Ejecutar acción
-3) Validar resultado",Comportamiento esperado según historia de usuario,
-TC-012,UI/Validation,Validar escenario 12,P2,Sitio disponible; usuario no logueado (si aplica).,"1) Abrir sitio
-2) Ejecutar acción
-3) Validar resultado",Comportamiento esperado según historia de usuario,
-TC-013,UI/Validation,Validar escenario 13,P2,Sitio disponible; usuario no logueado (si aplica).,"1) Abrir sitio
-2) Ejecutar acción
-3) Validar resultado",Comportamiento esperado según historia de usuario,
-TC-014,UI/Validation,Validar escenario 14,P3,Sitio disponible; usuario no logueado (si aplica).,"1) Abrir sitio
-2) Ejecutar acción
-3) Validar resultado",Comportamiento esperado según historia de usuario,
-TC-015,UI/Validation,Validar escenario 15,P3,Sitio disponible; usuario no logueado (si aplica).,"1) Abrir sitio
-2) Ejecutar acción
-3) Validar resultado",Comportamiento esperado según historia de usuario,
+TC-001,Catálogo,La página de inicio muestra productos,P1,Sitio demo accesible,Abrir la página de inicio,El catálogo y las categorías son visibles,Not executed
+TC-002,Detalle,La ficha corresponde al producto elegido,P1,Catálogo cargado,Seleccionar un producto,La ficha muestra el nombre y el precio del producto elegido,Not executed
+TC-003,Carrito,Agregar un producto al carrito,P1,Ficha de producto abierta,Seleccionar Add to cart y revisar la respuesta,El producto queda disponible en el carrito,Not executed
+TC-004,Carrito,El total coincide con los productos,P1,Carrito con al menos dos productos,Sumar los importes visibles y comparar con el total,El total coincide con la suma de los productos,Not executed
+TC-005,Checkout,Compra con datos válidos,P1,Carrito con producto y datos ficticios disponibles,Completar el formulario y confirmar una vez,Se muestra una confirmación coherente de la compra,Not executed
+TC-006,Checkout,Rechazar formulario vacío,P1,Formulario de compra abierto,Enviar el formulario sin completar campos,La compra no se confirma y se informa qué falta,Not executed
+TC-007,Checkout,Rechazar datos incompletos,P1,Formulario de compra abierto,Completar solo algunos campos y enviar,La validación indica los datos requeridos restantes,Not executed
+TC-008,Carrito,Mostrar carrito vacío,P2,Carrito sin productos,Acceder al carrito vacío,No se muestran productos ni un total incorrecto,Not executed
+TC-009,Carrito,Verificar estado tras actualizar página,P2,Carrito con producto,Actualizar la página y volver al carrito,El estado coincide con el comportamiento esperado del sitio,Not executed
+TC-010,Checkout,Evitar confirmación duplicada,P1,Formulario completo con datos ficticios,Confirmar la compra una sola vez,Una acción no produce confirmaciones duplicadas,Not executed
