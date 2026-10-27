@@ -46,6 +46,28 @@ class MiniTestPlanValidatorTests(unittest.TestCase):
 
         self.assertTrue(any("duplicate ID" in error for error in errors))
 
+
+    def test_report_rejects_inconsistent_execution_status_counts(self) -> None:
+        rows = [
+            {"status": "Pass"},
+            {"status": "Fail"},
+            {"status": "Blocked"},
+            {"status": "Not executed"},
+        ]
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "report.md"
+            path.write_text(
+                "- Casos diseñados: 4\\n- Casos ejecutados: 3\\n"
+                "- Pass: 2\\n- Fail: 0\\n- Blocked: 1\\n"
+                "Estado global: **No-Go**\\n",
+                encoding="utf-8",
+            )
+            with patch.object(validate_plan, "REPORT_PATH", path):
+                errors = validate_plan.validate_report(rows)
+
+        self.assertTrue(any("1 cases with status Pass" in error for error in errors))
+        self.assertTrue(any("1 cases with status Fail" in error for error in errors))
+
     def test_rejects_a_report_that_claims_execution_before_testing(self) -> None:
         rows = [{"status": "Not executed"}]
         with tempfile.TemporaryDirectory() as directory:
